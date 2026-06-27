@@ -1,0 +1,9 @@
+fastapi
+uvicorn
+yfinance
+pandas
+scikit-learn
+pydantic
+tensorflow
+supabase
+python-dotenv
