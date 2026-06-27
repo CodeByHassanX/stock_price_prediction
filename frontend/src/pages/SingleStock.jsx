@@ -26,7 +26,8 @@ function SingleStock() {
     
     try {
       setLoadingStep("Fetching data & Training LSTM (This takes ~15-30s)...");
-      const response = await axios.post(`http://localhost:8001/api/predict`, {
+      const API_URL = import.meta.env.VITE_API_URL || 'http://localhost:8001';
+      const response = await axios.post(`${API_URL}/api/predict`, {
         ticker: ticker,
         days: parseInt(days)
       });

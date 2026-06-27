@@ -24,8 +24,9 @@ function CompareStocks() {
     setResults([]);
 
     try {
+      const API_URL = import.meta.env.VITE_API_URL || 'http://localhost:8001';
       const promises = validTickers.map(ticker => 
-        axios.post(`http://localhost:8001/api/predict`, { ticker, days: 14 })
+        axios.post(`${API_URL}/api/predict`, { ticker, days: 14 })
       );
       
       const responses = await Promise.allSettled(promises);
